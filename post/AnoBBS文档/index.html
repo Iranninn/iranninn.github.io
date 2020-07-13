@@ -1,0 +1,949 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>API文档 | 千木岛</title>
+<link rel="shortcut icon" href="https:// fairyscript.github.io/favicon.ico?v=1594622476454">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https:// fairyscript.github.io/styles/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            千木岛
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+    </div>
+</nav>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    API文档
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2019-06-15 ·
+                    </time>
+                    
+                        <a href="https:// fairyscript.github.io/tag/_leXnatsy/" class="post-tags">
+                            # 技术笔记
+                        </a>
+                    
+                        <a href="https:// fairyscript.github.io/tag/xUAputAfrO/" class="post-tags">
+                            # A岛
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="写在前面">写在前面</h2>
+<p>这篇文章主要转载自<a href="https://www.zybuluo.com/ovear/note/151481">https://www.zybuluo.com/ovear/note/151481</a>， 但是API细节已经有所变动， 所以进行了修订， 添加了一些我自己的标注</p>
+<h3 id="一句话总结">一句话总结</h3>
+<ul>
+<li>因为API变动,返回值格式不一致， 建议所有的<strong>数字</strong>项全部强制类型转换</li>
+</ul>
+<h2 id="一些提示">一些提示</h2>
+<p>以下所有的API都有两种方式可调用<br>
+<a href="http://api/?key=value&amp;key2=value2">http://api?key=value&amp;key2=value2</a><br>
+以及<br>
+<a href="http://api/key/value/key2/value">http://api/key/value/key2/value</a></p>
+<p>同时所有的API调用都应该有一个appid跟在最后<br>
+User-Agent必须为HavfunClient-平台</p>
+<h2 id="获取饼干">获取饼干</h2>
+<p>/Api/getCookie</p>
+<p>返回</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">value</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">空</td>
+<td style="text-align:left">ok/error</td>
+<td style="text-align:left">若发放 cookie 成功， 则自动写入 cookie 并返回 ok， 否则 error</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>主岛已经启用了新的饼干系统, 但备胎岛仍是可用的(?)</p>
+</blockquote>
+<h2 id="主系统信息">主系统信息</h2>
+<p>关于一些主系统的API</p>
+<h3 id="获取图片cdn地址">获取图片CDN地址</h3>
+<p>/Api/getCdnPath</p>
+<p>返回</p>
+<pre><code class="language-json">
+</code></pre>
+<h3 id="获取备灾服务器地址">获取备灾服务器地址</h3>
+<h2 id="板块系统">板块系统</h2>
+<p>关于岛主要功能的API</p>
+<h3 id="获取板块列表">获取板块列表</h3>
+<p>/Api/getForumList</p>
+<p>由于返回的是Json， 这里直接给实例</p>
+<pre><code class="language-json">[
+    {
+        &quot;id&quot;: &quot;4&quot;,
+        &quot;sort&quot;: &quot;1&quot;,
+        &quot;name&quot;: &quot;综合&quot;,
+        &quot;status&quot;: &quot;n&quot;,
+        &quot;forums&quot;: [
+            {
+                &quot;id&quot;: &quot;4&quot;,
+                &quot;fgroup&quot;: &quot;4&quot;,
+                &quot;sort&quot;: &quot;1&quot;,
+                &quot;name&quot;: &quot;综合版1&quot;,
+                &quot;showName&quot;: &quot;&quot;,
+                &quot;msg&quot;: &quot;msg&quot;,
+                &quot;interval&quot;: &quot;15&quot;,
+                &quot;createdAt&quot;: &quot;2011-10-21 15:49:28&quot;,
+                &quot;updateAt&quot;: &quot;2015-06-23 17:26:28&quot;,
+                &quot;status&quot;: &quot;n&quot;
+            },
+            {
+                &quot;id&quot;: &quot;20&quot;,
+                &quot;fgroup&quot;: &quot;4&quot;,
+                &quot;sort&quot;: &quot;2&quot;,
+                &quot;name&quot;: &quot;欢乐恶搞&quot;,
+                &quot;showName&quot;: &quot;&quot;,
+                &quot;msg&quot;: &quot;msg&quot;,
+                &quot;interval&quot;: &quot;15&quot;,
+                &quot;createdAt&quot;: &quot;2011-10-21 15:48:43&quot;,
+                &quot;updateAt&quot;: &quot;2014-11-05 00:27:52&quot;,
+                &quot;status&quot;: &quot;n&quot;
+            },
+            {
+                &quot;id&quot;: &quot;11&quot;,
+                &quot;fgroup&quot;: &quot;4&quot;,
+                &quot;sort&quot;: &quot;3&quot;,
+                &quot;name&quot;: &quot;推理&quot;,
+                &quot;showName&quot;: &quot;&quot;,
+                &quot;msg&quot;: &quot;•微小说、图片推理、解谜。&lt;br/&gt;•本版发文间隔为15秒。&quot;,
+                &quot;interval&quot;: &quot;15&quot;,
+                &quot;createdAt&quot;: &quot;2011-10-29 16:38:23&quot;,
+                &quot;updateAt&quot;: &quot;2014-08-02 04:54:09&quot;,
+                &quot;status&quot;: &quot;n&quot;
+            }
+        ]
+    }
+]
+</code></pre>
+<p>这里针对返回值做一下解释<br>
+第一层JsonArray中的Object为分组， 具体信息如下</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">forums</td>
+<td style="text-align:left">这里是在本组的 forum</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">该板块组的 ID</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">这个就不用说了吧*(:з」∠)*</td>
+</tr>
+<tr>
+<td style="text-align:left">sort</td>
+<td style="text-align:left">服务器的排序值， 越小优先级越高， 若为-1 则自动排序</td>
+</tr>
+</tbody>
+</table>
+<p>forumObj信息</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">fgroup</td>
+<td style="text-align:left">所属组的 id</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">额。 。</td>
+</tr>
+<tr>
+<td style="text-align:left">interval</td>
+<td style="text-align:left">该板块的发言间隔时间</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">版块名称</td>
+</tr>
+<tr>
+<td style="text-align:left">showName</td>
+<td style="text-align:left">板块显示的名字， 若该值不为空则显示该值(包含 html)</td>
+</tr>
+<tr>
+<td style="text-align:left">sort</td>
+<td style="text-align:left">跟上面一样</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">始终为 n</td>
+</tr>
+</tbody>
+</table>
+<h3 id="获取板块串">获取板块串</h3>
+<p>/Api/showf<br>
+输入:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">获取板块的 id</td>
+</tr>
+<tr>
+<td style="text-align:left">page</td>
+<td style="text-align:left">分页</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>提示: 两个值都不能为空</p>
+</blockquote>
+<p>返回:</p>
+<pre><code class="language-json">[
+    {
+        &quot;id&quot;: &quot;18507780&quot;,
+        &quot;img&quot;: &quot;2019-06-14/5d0292f7e4697&quot;,
+        &quot;ext&quot;: &quot;.png&quot;,
+        &quot;now&quot;: &quot;2019-06-14(五)02:16:24&quot;,
+        &quot;userid&quot;: &quot;1tnMQXQ&quot;,
+        &quot;name&quot;: &quot;无名氏&quot;,
+        &quot;email&quot;: &quot;&quot;,
+        &quot;title&quot;: &quot;无标题&quot;,
+        &quot;content&quot;: &quot;这建模不如做里番可惜了啊(つд⊂)&quot;,
+        &quot;sage&quot;: &quot;0&quot;,
+        &quot;admin&quot;: &quot;0&quot;,
+        &quot;remainReplys&quot;: 3,
+        &quot;replyCount&quot;: &quot;8&quot;,
+        &quot;replys&quot;: [
+            {
+                &quot;id&quot;: &quot;18507804&quot;,
+                &quot;img&quot;: &quot;&quot;,
+                &quot;ext&quot;: &quot;&quot;,
+                &quot;now&quot;: &quot;2019-06-14(五)02:21:52&quot;,
+                &quot;userid&quot;: &quot;m7s6Xcm&quot;,
+                &quot;name&quot;: &quot;无名氏&quot;,
+                &quot;email&quot;: &quot;&quot;,
+                &quot;title&quot;: &quot;无标题&quot;,
+                &quot;content&quot;: &quot;拉良家妇女下水&lt;br /&gt;\n劝失足姑娘上岸&quot;,
+                &quot;sage&quot;: &quot;0&quot;,
+                &quot;admin&quot;: &quot;0&quot;
+            }
+        ]
+    }
+]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">admin</td>
+<td style="text-align:left">是否是酷炫红名， 如果是酷炫红名则 userid 为红名 id</td>
+</tr>
+<tr>
+<td style="text-align:left">content</td>
+<td style="text-align:left">.... 这个你也懂</td>
+</tr>
+<tr>
+<td style="text-align:left">email</td>
+<td style="text-align:left">你懂得</td>
+</tr>
+<tr>
+<td style="text-align:left">ext</td>
+<td style="text-align:left">该串图片的后缀</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">该串的 id</td>
+</tr>
+<tr>
+<td style="text-align:left">img</td>
+<td style="text-align:left">该串的图片相对地址</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">你懂得</td>
+</tr>
+<tr>
+<td style="text-align:left">now</td>
+<td style="text-align:left">该串的可视化发言时间</td>
+</tr>
+<tr>
+<td style="text-align:left">remainReplys</td>
+<td style="text-align:left">还剩余多少个回复(指没有在 showf 中返回)</td>
+</tr>
+<tr>
+<td style="text-align:left">replyCount</td>
+<td style="text-align:left">总共有多少个回复</td>
+</tr>
+<tr>
+<td style="text-align:left">replys</td>
+<td style="text-align:left">主页展示回复的帖子</td>
+</tr>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left">你还是懂的*(:з」∠)*</td>
+</tr>
+<tr>
+<td style="text-align:left">userid</td>
+<td style="text-align:left">该串的饼干</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>需要注意的是， &quot;remainReplys&quot;是新添加项目， 是<strong>数字格式</strong>， 而&quot;replyCount&quot;返回的是<strong>字符串</strong>格式</p>
+</blockquote>
+<p>小提示</p>
+<ol>
+<li>image的缩略图地址为 <a href="http://cdnpath/thumb/ext">http://cdnpath/thumb/ext</a></li>
+<li>image的真实地址为 <a href="http://cdnpath/image/ext">http://cdnpath/image/ext</a></li>
+<li>image的cdnpath自己上页面上扒(:з」∠)</li>
+<li>replys对象的相关信息和上面相似。 。 你们也应该懂得。 。 累屎了</li>
+<li>噢， 要凑够六条才行→_→（强迫症）</li>
+<li>还有一条， 可以通过img是否为空来判断是否有图片</li>
+</ol>
+<h3 id="获取时间线">获取时间线</h3>
+<p>/Api/timeline</p>
+<pre><code class="language-json">[
+    {
+        &quot;id&quot;: &quot;18507780&quot;,
+        &quot;fid&quot;: &quot;4&quot;,
+        &quot;img&quot;: &quot;2019-06-14/5d0292f7e4697&quot;,
+        &quot;ext&quot;: &quot;.png&quot;,
+        &quot;now&quot;: &quot;2019-06-14(五)02:16:24&quot;,
+        &quot;userid&quot;: &quot;1tnMQXQ&quot;,
+        &quot;name&quot;: &quot;无名氏&quot;,
+        &quot;email&quot;: &quot;&quot;,
+        &quot;title&quot;: &quot;无标题&quot;,
+        &quot;content&quot;: &quot;这建模不如做里番可惜了啊(つд⊂)&quot;,
+        &quot;sage&quot;: &quot;0&quot;,
+        &quot;admin&quot;: &quot;0&quot;,
+        &quot;remainReplys&quot;: 3,
+        &quot;replyCount&quot;: &quot;8&quot;,
+        &quot;replys&quot;: [
+            {
+                &quot;id&quot;: &quot;18507804&quot;,
+                &quot;img&quot;: &quot;&quot;,
+                &quot;ext&quot;: &quot;&quot;,
+                &quot;now&quot;: &quot;2019-06-14(五)02:21:52&quot;,
+                &quot;userid&quot;: &quot;m7s6Xcm&quot;,
+                &quot;name&quot;: &quot;无名氏&quot;,
+                &quot;email&quot;: &quot;&quot;,
+                &quot;title&quot;: &quot;无标题&quot;,
+                &quot;content&quot;: &quot;拉良家妇女下水&lt;br /&gt;\n劝失足姑娘上岸&quot;,
+                &quot;sage&quot;: &quot;0&quot;,
+                &quot;admin&quot;: &quot;0&quot;
+            }
+        ]
+    }
+]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">admin</td>
+<td style="text-align:left">是否是酷炫红名， 如果是酷炫红名则 userid 为红名 id</td>
+</tr>
+<tr>
+<td style="text-align:left">content</td>
+<td style="text-align:left">.... 这个你也懂</td>
+</tr>
+<tr>
+<td style="text-align:left">email</td>
+<td style="text-align:left">你懂得</td>
+</tr>
+<tr>
+<td style="text-align:left">ext</td>
+<td style="text-align:left">该串图片的后缀</td>
+</tr>
+<tr>
+<td style="text-align:left">fid</td>
+<td style="text-align:left">该串所属的板块 id</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">该串的 id</td>
+</tr>
+<tr>
+<td style="text-align:left">img</td>
+<td style="text-align:left">该串的图片相对地址</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">你懂得</td>
+</tr>
+<tr>
+<td style="text-align:left">now</td>
+<td style="text-align:left">该串的可视化发言时间</td>
+</tr>
+<tr>
+<td style="text-align:left">remainReplys</td>
+<td style="text-align:left">还剩余多少个回复(指没有在 showf 中返回)</td>
+</tr>
+<tr>
+<td style="text-align:left">replyCount</td>
+<td style="text-align:left">总共有多少个回复</td>
+</tr>
+<tr>
+<td style="text-align:left">replys</td>
+<td style="text-align:left">主页展示回复的帖子</td>
+</tr>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left">你还是懂的*(:з」∠)*</td>
+</tr>
+<tr>
+<td style="text-align:left">userid</td>
+<td style="text-align:left">该串的饼干</td>
+</tr>
+</tbody>
+</table>
+<p>实际上和showf是差不多的啦…只不过多了一个&quot;fid&quot;用来标识时间线上串的所述板块</p>
+<h3 id="获取串内容">获取串内容</h3>
+<p>/Api/thread<br>
+输入:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">串的 id</td>
+</tr>
+<tr>
+<td style="text-align:left">page</td>
+<td style="text-align:left">分页</td>
+</tr>
+</tbody>
+</table>
+<p>提示: 同样两个都不能为空</p>
+<p>返回:</p>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;6467841&quot;,
+    &quot;img&quot;: &quot;&quot;,
+    &quot;ext&quot;: &quot;&quot;,
+    &quot;now&quot;: &quot;2015-08-12(三)16:08:00&quot;,
+    &quot;userid&quot;: &quot;F0zz1FP&quot;,
+    &quot;name&quot;: &quot;无名氏&quot;,
+    &quot;email&quot;: &quot;&quot;,
+    &quot;title&quot;: &quot;无标题&quot;,
+    &quot;content&quot;: &quot;尼玛本来我如果说个好的,知道了.这个运维工作就到手了,我多了几句嘴,然后对方就我说的提了几个问题我半天答不上来,结果到手的offer飞了.尼玛,真够郁闷的(;´Д`)&quot;,
+    &quot;admin&quot;: &quot;0&quot;,
+    &quot;replyCount&quot;: &quot;7&quot;,
+    &quot;replys&quot;: [
+        {
+            &quot;id&quot;: &quot;6467854&quot;,
+            &quot;img&quot;: &quot;&quot;,
+            &quot;ext&quot;: &quot;&quot;,
+            &quot;now&quot;: &quot;2015-08-12(三)16:13:05&quot;,
+            &quot;userid&quot;: &quot;30ru124&quot;,
+            &quot;name&quot;: &quot;无名氏&quot;,
+            &quot;email&quot;: &quot;&quot;,
+            &quot;title&quot;: &quot;无标题&quot;,
+            &quot;content&quot;: &quot;嘴欠得肥宅&quot;,
+            &quot;admin&quot;: &quot;0&quot;
+        }
+    ]
+}
+</code></pre>
+<p>关于Thread Obj</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">admin</td>
+<td style="text-align:left">是否是酷炫红名， 如果是酷炫红名则 userid 为红名 id</td>
+</tr>
+<tr>
+<td style="text-align:left">content</td>
+<td style="text-align:left">.... 这个你也懂</td>
+</tr>
+<tr>
+<td style="text-align:left">email</td>
+<td style="text-align:left">你懂得</td>
+</tr>
+<tr>
+<td style="text-align:left">ext</td>
+<td style="text-align:left">该串图片的后缀</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">该串的 id</td>
+</tr>
+<tr>
+<td style="text-align:left">img</td>
+<td style="text-align:left">该串的图片相对地址</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">你懂得</td>
+</tr>
+<tr>
+<td style="text-align:left">now</td>
+<td style="text-align:left">该串的可视化发言时间</td>
+</tr>
+<tr>
+<td style="text-align:left">replyCount</td>
+<td style="text-align:left">总共有多少个回复</td>
+</tr>
+<tr>
+<td style="text-align:left">replys</td>
+<td style="text-align:left">主页展示回复的帖子</td>
+</tr>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left">你还是懂的*(:з」∠)*</td>
+</tr>
+<tr>
+<td style="text-align:left">userid</td>
+<td style="text-align:left">该串的饼干</td>
+</tr>
+</tbody>
+</table>
+<p>→_→ 我不会告诉你这是从上面复制过来的， 小提示也跟上面一样也</p>
+<blockquote>
+<p>特殊的， ID为9999999的广告串， 返回的&quot;id&quot;和&quot;admin&quot;都是<strong>数字</strong></p>
+</blockquote>
+<h3 id="获取回应串">获取回应串</h3>
+<p>/Api/ref</p>
+<p>输入：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">串的 id</td>
+</tr>
+</tbody>
+</table>
+<p>返回：</p>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;17901165&quot;,
+    &quot;img&quot;: &quot;2019-05-05/5cce8c7195a50&quot;,
+    &quot;ext&quot;: &quot;.jpg&quot;,
+    &quot;now&quot;: &quot;2019-05-05(日)15:10:41&quot;,
+    &quot;userid&quot;: &quot;topVtba&quot;,
+    &quot;name&quot;: &quot;无名氏&quot;,
+    &quot;email&quot;: &quot;&quot;,
+    &quot;title&quot;: &quot;无标题&quot;,
+    &quot;content&quot;: &quot;完 全 魔 幻 现 实 跑 团&lt;br /&gt;\r\n&lt;br /&gt;\r\n【日常】【超能】【魔幻现实】【青春恋爱】【搞笑】&lt;br /&gt;\r\n&lt;br /&gt;\r\n以上标签，和本团 【没 有 任 何 关 系】&lt;br /&gt;\r\n&lt;br /&gt;\r\n短暂（？）的短暂前情提要&lt;br /&gt;\r\n&lt;font color=\&quot;#789922\&quot;&gt;&amp;gt;&amp;gt;No.17498853&lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n总之你重生了&quot;,
+    &quot;sage&quot;: &quot;0&quot;,
+    &quot;admin&quot;: &quot;0&quot;
+}
+</code></pre>
+<p>emmm…真的需要我进一步说明吗？</p>
+<h4 id="旧有api">旧有API</h4>
+<p>/Home/Forum/ref</p>
+<p>输入：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">串的 id</td>
+</tr>
+</tbody>
+</table>
+<p>返回：</p>
+<pre><code class="language-html">&lt;div class=&quot;h-threads-item&quot;&gt;
+    &lt;div data-threads-id=&quot;17962944&quot; class=&quot;h-threads-item-reply h-threads-item-ref&quot;&gt;
+        &lt;div class=&quot;h-threads-item-reply-main&quot;&gt;
+            &lt;div class=&quot;h-threads-info&quot;&gt;
+                &lt;span class=&quot;h-threads-info-title&quot;&gt;无标题&lt;/span&gt;
+                &lt;span class=&quot;h-threads-info-email&quot;&gt;无名氏&lt;/span&gt;
+                &lt;span class=&quot;h-threads-info-createdat&quot;&gt;2019-05-09(四)18:11:05&lt;/span&gt;
+                &lt;span class=&quot;h-threads-info-uid&quot;&gt;ID:DGDH18d&lt;/span&gt;
+                &lt;span class=&quot;h-threads-info-report-btn&quot;&gt;[
+                    &lt;a href=&quot;/f/值班室?r=17962944&quot;&gt;举报&lt;/a&gt;]
+                &lt;/span&gt;
+                &lt;a href=&quot;/t/17962944?r=17962944&quot; class=&quot;h-threads-info-id&quot;&gt;No.17962944&lt;/a&gt;
+                &lt;span data-uk-dropdown=&quot;data-uk-dropdown&quot; class=&quot;h-admin-tool uk-button-dropdown&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;uk-button uk-button-link uk-button-small&quot;&gt;管理&lt;/a&gt;
+                    &lt;div class=&quot;uk-dropdown uk-dropdown-small&quot;&gt;
+                        &lt;ul class=&quot;uk-nav uk-nav-dropdown&quot;&gt;
+                            &lt;li class=&quot;uk-nav-header&quot;&gt;管理 -&amp;gt; No.17962944&lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;/Home/Forum/sagePost/id/17962944.html&quot;&gt;SAGE&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;http://hacfun.tv:1336/content/threads/6187238/set?key=lock&amp;amp;value=true&quot;&gt;锁定&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class=&quot;uk-nav-divider&quot;&gt;&lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;http://hacfun.tv:1336/content/threads/6187238/removeImages&quot;&gt;删图&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;/Home/Forum/delPost/id/17962944.html&quot;&gt;删串&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class=&quot;uk-nav-divider&quot;&gt;&lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;http://hacfun.tv:1336/content/threads/6187238/update&quot;&gt;编辑&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;http://hacfun.tv:1336/content/threads?parent=6187238&quot;&gt;查询&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;/Home/Forum/banip/id/17962944.html&quot; class=&quot;qlink&quot;&gt;锁IP&lt;/a&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;/Home/Forum/banCookie/id/17962944.html&quot; class=&quot;qlink&quot;&gt;锁Cookie&lt;/a&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;h-threads-content&quot;&gt;
+                朱军有什么丧丧的小情歌啊，最近迷上JOJI这个宝藏男孩了。 &lt;/div&gt;
+            &lt;div class=&quot;uk-clearfix&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>嗯， 我知道， 混进来了一个画风不一样的……</p>
+<p>都说了是旧有API嘛(摔)， 没有办法， 这个API可以通过&quot;h-thread-info-id&quot;的href属性来获取到回应的主串， 管理API的地址也给你看到啦(当然鉴权什么的……你懂的)</p>
+<p>目前只有部分功能可以用， 至于是哪些嘛……自己猜</p>
+<h3 id="发表新串">发表新串</h3>
+<p>/Home/Forum/doReplyThread.html</p>
+<p>输入：<br>
+<strong>body</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">type</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">resto(二选一)</td>
+<td style="text-align:left">number or string</td>
+<td style="text-align:left">要回应的串号</td>
+</tr>
+<tr>
+<td style="text-align:left">fid(二选一)</td>
+<td style="text-align:left">number or string</td>
+<td style="text-align:left">要发串的版块号</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">名称</td>
+</tr>
+<tr>
+<td style="text-align:left">isManager</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">是否用红名发言(只要有这项即判断为红名)</td>
+</tr>
+<tr>
+<td style="text-align:left">email</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">邮箱</td>
+</tr>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">标题</td>
+</tr>
+<tr>
+<td style="text-align:left">content</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">正文</td>
+</tr>
+<tr>
+<td style="text-align:left">water</td>
+<td style="text-align:left">boolen</td>
+<td style="text-align:left">是否添加水印</td>
+</tr>
+<tr>
+<td style="text-align:left">image</td>
+<td style="text-align:left">binary</td>
+<td style="text-align:left">图片文件</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>hash</strong>（可选）</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">饼干</td>
+</tr>
+</tbody>
+</table>
+<h2 id="订阅系统">订阅系统</h2>
+<h3 id="查询订阅">查询订阅</h3>
+<p>/Api/feed</p>
+<p>输入:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">page</td>
+<td style="text-align:left">分页</td>
+</tr>
+<tr>
+<td style="text-align:left">uuid</td>
+<td style="text-align:left">这个为手机的 uuid， 或者自定义的一些识别用户的方法， 用来识别某个用户</td>
+</tr>
+</tbody>
+</table>
+<p>返回:</p>
+<pre><code class="language-json">[
+    {
+        &quot;id&quot;: &quot;6460798&quot;,
+        &quot;fid&quot;: &quot;4&quot;,
+        &quot;category&quot;: &quot;&quot;,
+        &quot;img&quot;: &quot;&quot;,
+        &quot;ext&quot;: &quot;&quot;,
+        &quot;now&quot;: &quot;2015-08-10(一)02:04:49&quot;,
+        &quot;userid&quot;: &quot;crGIPK87&quot;,
+        &quot;name&quot;: &quot;无名氏&quot;,
+        &quot;email&quot;: &quot;&quot;,
+        &quot;title&quot;: &quot;无标题&quot;,
+        &quot;content&quot;: &quot;我现在身边睡着一个全裸的伪娘。。。我的心情很复杂&lt;br&gt;&quot;,
+        &quot;status&quot;: &quot;n&quot;,
+        &quot;admin&quot;: &quot;0&quot;
+    }
+]
+</code></pre>
+<p>具体信息参阅前面的啦~好累啊*(:з」∠)*懒死了</p>
+<h3 id="增加订阅">增加订阅</h3>
+<p>/Api/addFeed<br>
+输入</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">tid</td>
+<td style="text-align:left">需要订阅的串 id</td>
+</tr>
+<tr>
+<td style="text-align:left">uuid</td>
+<td style="text-align:left">这个为手机的 uuid， 或者自定义的一些识别用户的方法， 用来识别某个用户</td>
+</tr>
+</tbody>
+</table>
+<p>返回</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">并没有</td>
+<td style="text-align:left">如果成功返回 &quot;订阅大成功 →_→&quot; 出错或者其他原因返回 &quot;该主题不存在&quot;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="删除订阅">删除订阅</h3>
+<p>/Api/delFeed<br>
+提交:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">tid</td>
+<td style="text-align:left">需要订阅的串 id</td>
+</tr>
+<tr>
+<td style="text-align:left">uuid</td>
+<td style="text-align:left">这个为手机的 uuid， 或者自定义的一些识别用户的方法， 用来识别某个用户</td>
+</tr>
+</tbody>
+</table>
+<p>返回:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">key</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">并没有</td>
+<td style="text-align:left">如果成功返回 &quot;取消订阅成功!&quot; 出错或者其他原因返回原因</td>
+</tr>
+</tbody>
+</table>
+
+                </div>
+            </article>
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">懒人 混沌</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https:// fairyscript.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
