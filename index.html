@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>千木岛</title>
-<link rel="shortcut icon" href="https://queb.fun/favicon.ico?v=1594623314195">
+<link rel="shortcut icon" href="https://queb.fun/favicon.ico?v=1594623805451">
 <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://queb.fun/styles/main.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -175,27 +175,7 @@
                         </a>
                     </div>
                     <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        <blockquote>
-<p>本文所述内容来源于 https://www.insanelymac.com/forum/topic/335018-intel-fb-patcher-v165/</p>
-</blockquote>
-<p>自macOS版本来到10.14.1之后，过去常用的通过USBInjectall.kext 来破解系统USB端口数来完成后续修补的办法已经部分失效，本文即是为了在新版本系统中修补USB端口而作，其中核心内容译自开头链接</p>
-<p>所需工具：</p>
-<ul>
-<li>macOS（如果有低于10.14.1的系统，可以直接进行修补而不需要重复下面的步骤）</li>
-<li>FB-Patcher （https://www.insanelymac.com/forum/topic/335018-intel-fb-patcher-v165/）</li>
-<li>USBInjectall.kext （https://github.com/RehabMan/OS-X-USB-Inject-All）</li>
-<li>Clover （文本编辑或者Clover Configurator）</li>
-<li>一个可以使用的USB3.0设备</li>
-</ul>
-<h3 id="步骤1">步骤1</h3>
-<p>在Clover（/Clover/kexts/Other）中添加USBInjectall.kext，为了使其工作，在Clover-Acpi-DSDT中添加三个patch：</p>
-<ul>
-<li>Rename XHC1 -&gt; XHC</li>
-<li>Rename EHC1 -&gt; EH01</li>
-<li>Rename EHC2 -&gt; EH02</li>
-</ul>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2018/12/06/5c0830114dc9d.png" alt="" loading="lazy"></figure>
-
+                        
                     </div>
                     <div class="post-info">
                         <time class="post-time gt-c-content-color-first">
@@ -224,7 +204,17 @@
                         </a>
                     </div>
                     <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
+                        <p>​	本文是我在研究黑苹果DSDT期间所做的技术笔记，可读性会很差，建议善用搜索功能。</p>
+<p>​	Clover修正DSDT的方式主要有两种：Patched 与 hotpatch。hotpatch主要是对原有的属性进行修正，而patched相当于为电脑添加了新的属性。故两者不能混淆。</p>
+<p>​	Clover对DSDT热修补(hotpatch)的大致思路是将现有的需要修正的DSDT进行「重命名」，然后制作一个自定的DSDT文件（.aml)。将系统原生的DSDT访问指向自定的文件，然后就可以做到自定义指定DSDT的行为，此处举例：</p>
+<pre><code>Comment: Rename _DSM to XDSM
+Find: &lt;5f44534d&gt;
+Replace: &lt;5844534d&gt;
+</code></pre>
+<p>注：「_DSM」转为Hex写作&lt;5f44534d&gt;</p>
+<p>将系统原生的 _DSM 访问重定向至 XDSM，配合/clover/acpi/hotpatch下的.aml文件就可以拦截处理指定的DSDT。</p>
+<p>未完待续……</p>
+
                     </div>
                     <div class="post-info">
                         <time class="post-time gt-c-content-color-first">
@@ -257,7 +247,7 @@
                         </a>
                     </div>
                     <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        <figure data-type="image" tabindex="1"><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fuloi2o51hj318g0ix1ky.jpg" alt="70217074_p0" loading="lazy"></figure>
+                        <figure data-type="image" tabindex="1"><img src="https://i.pximg.net/img-master/img/2018/08/16/00/00/10/70217074_p0_master1200.jpg" alt="70217074_p0" loading="lazy"></figure>
 <p>最近终于在百(shou)忙(lie)之余想起来还有个博客的事，最近几个月除了把博客搬迁到了gitpage就完全没有理睬这玩意，既然今天想起来了就干脆把之前魔改留下的坑稍微填一下……</p>
 <p>为什么会有这篇文章呢，为了让博客看着稍微正常点，我找了关于如何在Md页面中插入HTML的教程，最后发现是原生支持的……那么问题就变成了要在页面上插入些什么东西才好，思前想后果然还是王道征途，音乐控件吧</p>
 <p>那么就是惯例的Google，找到了如下的代码：</p>
