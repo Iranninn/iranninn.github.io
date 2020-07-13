@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https:// fairyscript.github.io</id>
+    <id>https://fairyscript.github.io</id>
     <title>千木岛</title>
-    <updated>2020-07-13T06:51:41.272Z</updated>
+    <updated>2020-07-13T06:53:01.273Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https:// fairyscript.github.io"/>
-    <link rel="self" href="https:// fairyscript.github.io/atom.xml"/>
+    <link rel="alternate" href="https://fairyscript.github.io"/>
+    <link rel="self" href="https://fairyscript.github.io/atom.xml"/>
     <subtitle>懒人 混沌</subtitle>
-    <logo>https:// fairyscript.github.io/images/avatar.png</logo>
-    <icon>https:// fairyscript.github.io/favicon.ico</icon>
+    <logo>https://fairyscript.github.io/images/avatar.png</logo>
+    <icon>https://fairyscript.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 千木岛</rights>
     <entry>
         <title type="html"><![CDATA[博客迁移到Gridea]]></title>
-        <id>https:// fairyscript.github.io/post/bo-ke-qian-yi-dao-gridea/</id>
-        <link href="https:// fairyscript.github.io/post/bo-ke-qian-yi-dao-gridea/">
+        <id>https://fairyscript.github.io/post/bo-ke-qian-yi-dao-gridea/</id>
+        <link href="https://fairyscript.github.io/post/bo-ke-qian-yi-dao-gridea/">
         </link>
         <updated>2020-07-13T06:33:14.000Z</updated>
         <content type="html"><![CDATA[<p>Hexo很好,但是我不太懂它的模板语法,而且<strong>我懒</strong>,所以经过五分钟的调研我选择了<a href="https://github.com/getgridea/gridea">Gridea</a>作为博客的框架,然后从里面找了个顺眼的主题</p>
@@ -23,8 +23,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[黑苹果安装经验谈]]></title>
-        <id>https:// fairyscript.github.io/post/黑苹果安装不完全指北/</id>
-        <link href="https:// fairyscript.github.io/post/黑苹果安装不完全指北/">
+        <id>https://fairyscript.github.io/post/黑苹果安装不完全指北/</id>
+        <link href="https://fairyscript.github.io/post/黑苹果安装不完全指北/">
         </link>
         <updated>2018-12-03T13:11:19.000Z</updated>
         <content type="html"><![CDATA[<h2 id="写在开头">写在开头</h2>
@@ -35,8 +35,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[通过NoVpaJpeg.kext解决 macOS Mojave(10.14)下预览jpg格式崩溃]]></title>
-        <id>https:// fairyscript.github.io/post/通过NoVpaJpeg.kext解决 macOS Mojave(10.14)下预览jpg格式崩溃/</id>
-        <link href="https:// fairyscript.github.io/post/通过NoVpaJpeg.kext解决 macOS Mojave(10.14)下预览jpg格式崩溃/">
+        <id>https://fairyscript.github.io/post/通过NoVpaJpeg.kext解决 macOS Mojave(10.14)下预览jpg格式崩溃/</id>
+        <link href="https://fairyscript.github.io/post/通过NoVpaJpeg.kext解决 macOS Mojave(10.14)下预览jpg格式崩溃/">
         </link>
         <updated>2018-11-26T11:02:17.000Z</updated>
         <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2018/12/02/5c03976c6e5e0.png" alt="56493506_p0.png" loading="lazy"></figure>
@@ -54,8 +54,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[黑苹果fix USB端口（适用于10.14.1)]]></title>
-        <id>https:// fairyscript.github.io/post/[todo]黑苹果fix-USB端口（适用于10-14-1/</id>
-        <link href="https:// fairyscript.github.io/post/[todo]黑苹果fix-USB端口（适用于10-14-1/">
+        <id>https://fairyscript.github.io/post/[todo]黑苹果fix-USB端口（适用于10-14-1/</id>
+        <link href="https://fairyscript.github.io/post/[todo]黑苹果fix-USB端口（适用于10-14-1/">
         </link>
         <updated>2018-11-17T13:39:54.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -121,8 +121,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Clover DSDT 笔记]]></title>
-        <id>https:// fairyscript.github.io/post/Clover-DSDT-笔记/</id>
-        <link href="https:// fairyscript.github.io/post/Clover-DSDT-笔记/">
+        <id>https://fairyscript.github.io/post/Clover-DSDT-笔记/</id>
+        <link href="https://fairyscript.github.io/post/Clover-DSDT-笔记/">
         </link>
         <updated>2018-10-30T12:16:12.000Z</updated>
         <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=30148963&auto=1&height=66"></iframe>
@@ -140,8 +140,8 @@ Replace: &lt;5844534d&gt;
     </entry>
     <entry>
         <title type="html"><![CDATA[在hexo页面插入网易云播放器]]></title>
-        <id>https:// fairyscript.github.io/post/在hexo页面插入网易云播放器/</id>
-        <link href="https:// fairyscript.github.io/post/在hexo页面插入网易云播放器/">
+        <id>https://fairyscript.github.io/post/在hexo页面插入网易云播放器/</id>
+        <link href="https://fairyscript.github.io/post/在hexo页面插入网易云播放器/">
         </link>
         <updated>2018-08-23T00:49:33.000Z</updated>
         <summary type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fuloi2o51hj318g0ix1ky.jpg" alt="70217074_p0" loading="lazy"></figure>
@@ -179,8 +179,8 @@ Replace: &lt;5844534d&gt;
     </entry>
     <entry>
         <title type="html"><![CDATA[Play Store更新APP卡在“正在下载”的解决方法]]></title>
-        <id>https:// fairyscript.github.io/post/Play Store更新APP卡在“正在下载”的解决方法/</id>
-        <link href="https:// fairyscript.github.io/post/Play Store更新APP卡在“正在下载”的解决方法/">
+        <id>https://fairyscript.github.io/post/Play Store更新APP卡在“正在下载”的解决方法/</id>
+        <link href="https://fairyscript.github.io/post/Play Store更新APP卡在“正在下载”的解决方法/">
         </link>
         <updated>2018-08-22T21:01:22.000Z</updated>
         <content type="html"><![CDATA[<p>最近几个月遇到了Play Store更新/下载应用时长时间卡在“正在下载…”的情况，然后过了几分钟之后突然开始下载的情况。一开始以为是网络的问题，但是反复检查没有头绪，于是搜索了一下，发现这个现象从去年开始就有相关的资料了（有理由怀疑是Google在搞什么动作）</p>
@@ -189,8 +189,8 @@ Replace: &lt;5844534d&gt;
     </entry>
     <entry>
         <title type="html"><![CDATA[Nginx从入门到入土#1——配置文件初探]]></title>
-        <id>https:// fairyscript.github.io/post/Nginx从入门到入土#1——配置文件初探/</id>
-        <link href="https:// fairyscript.github.io/post/Nginx从入门到入土#1——配置文件初探/">
+        <id>https://fairyscript.github.io/post/Nginx从入门到入土#1——配置文件初探/</id>
+        <link href="https://fairyscript.github.io/post/Nginx从入门到入土#1——配置文件初探/">
         </link>
         <updated>2018-04-13T11:06:22.000Z</updated>
         <summary type="html"><![CDATA[<p>本文意在简要说明Nginx配置文件以尽快上手，诸多进阶配置项不在本文的介绍范围内，请自行Google 😃</p>
@@ -264,8 +264,8 @@ include /etc/nginx/sites-enabled/*;
     </entry>
     <entry>
         <title type="html"><![CDATA[黑苹果升级10.13.4——显卡篇]]></title>
-        <id>https:// fairyscript.github.io/post/黑苹果升级10-13-4——显卡篇/</id>
-        <link href="https:// fairyscript.github.io/post/黑苹果升级10-13-4——显卡篇/">
+        <id>https://fairyscript.github.io/post/黑苹果升级10-13-4——显卡篇/</id>
+        <link href="https://fairyscript.github.io/post/黑苹果升级10-13-4——显卡篇/">
         </link>
         <updated>2018-03-31T03:53:12.000Z</updated>
         <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2018/04/13/5ad080a90ad84.jpg" alt="" loading="lazy"></figure>
@@ -282,8 +282,8 @@ include /etc/nginx/sites-enabled/*;
     </entry>
     <entry>
         <title type="html"><![CDATA[沉沉浮浮的千木岛]]></title>
-        <id>https:// fairyscript.github.io/post/沉沉浮浮的千木岛/</id>
-        <link href="https:// fairyscript.github.io/post/沉沉浮浮的千木岛/">
+        <id>https://fairyscript.github.io/post/沉沉浮浮的千木岛/</id>
+        <link href="https://fairyscript.github.io/post/沉沉浮浮的千木岛/">
         </link>
         <updated>2018-03-20T11:13:48.000Z</updated>
         <content type="html"><![CDATA[<p>距离上一次试图浮岛大概过去了两年，期间断断续续写过很多字。</p>
